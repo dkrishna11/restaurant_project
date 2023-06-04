@@ -35,7 +35,7 @@ function TakeOrder() {
       setTimeout(() => {
         const burgers = ['Cheeseburger', 'Pizza', 'Tacos', 'Sushi', 'Pasta', 'Fried Chicken', 'Grilled Cheese Sandwich', 'Steak', 'Caesar Salad', 'Fish and Chips', 'Ramen', 'Burrito', 'Pho', 'Pad Thai', 'Gyro', 'Ice Cream', 'Smoothie', 'Apple Pie', 'Chocolate Cake', 'Pancakes', 'Cupcake', 'Crepes', 'Club Sandwich', 'Falafel', 'Curry']
         const order = {
-          burgers: burgers.sort(() => 0.5 - Math.random()).slice(0, 3),
+          burgers: burgers.sort(() => 0.5 - Math.random()).slice(0, 3)
         };
         arr=order.burgers;
         fetch('https://avivashishta29.github.io/f2-contest-test/db.json')
@@ -98,11 +98,12 @@ function TakeOrder() {
   async function pay(){
         const paymentStatus = await payOrder();
         console.log("Payment_Order status:", paymentStatus);
+        if(paymentStatus.paid===true)
         thankyouFnc();
   }
  
 
 
-document.getElementById('getOrder').addEventListener('click', getMenu);
+getMenu();
 document.getElementById('placeOrder').addEventListener('click', place_order);
 document.getElementById('payOrder').addEventListener('click', pay);
