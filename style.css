@@ -1,7 +1,12 @@
 *{
     margin: 0;
   }
-  
+    
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+} 
+
 .header{
       height: 100px;
       background-color: aqua;
@@ -14,18 +19,8 @@
       color: rgb(108, 25, 185);
       text-align: center;
 }
-  
-  
-body {
-      text-align: center;
-      font-family: Arial, sans-serif;
-}
-    
-h1 {
-    color: #333 
-}
 .btn{
-    background-color: khaki;
+    background-color: #f7941e;
 }
 
 button {
@@ -33,7 +28,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #333;
-    color: #fff;
+    color: #e3b05f;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -41,28 +36,109 @@ button {
 
 button:hover {
     background-color: #555;
+    color: white;
 }
 
-.container{
+.container, .placed{
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    
+    background-color: #43362e;
+}
+.placed{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #43362e;
 }
 .menu-details{
-    border: 1px solid red;
+    border:none;
     border-radius: 5px;
     padding: 20px;
+    background-color: #b80f14;
 }
 
-.menu-details img{
+.placed-details{
+    border:none;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #2b292a;
+}
+
+.menu-details img, .placed img{
     width:50%;
     height:50%;
     border-radius: 50%;
+    border: 5px solid white;
 }
 
-.menu-details p{
+.menu-details p, .placed p{
     font-size: 18px;
     font-weight: 700;
+    padding: 15px;
+    color: white;
 }
+
+
+.placed{
+    background-color: rgb(248, 242, 242);
+    align-items: center;
+}
+.head{
+    margin: 2px 0;
+    background-color: rgb(47, 0, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+/* -*************** Responsive Design ********** */
+@media screen and (max-width:768px){
+    .container, .placed{
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        
+    }
+}
+
+
+
+@media screen and (max-width:540px) {
+    .main-menu{
+        width: 100%;
+    }
+    .header h1{
+        font-size: 28px;
+        text-align: center;
+    }
+
+
+    .btn{
+        display: flex;
+        flex-direction: column;
+        transition: 1s width ease;
+    }
+
+    button{
+        margin: 16px;
+        padding: 10px 20px;
+        width: 92%;
+    }
+
+    .container, .placed{
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        
+    }
+}
+
